@@ -96,6 +96,10 @@
             document.getElementById("divPrijava").classList.add("hidden");
             document.getElementById("info").classList.remove("hidden");
             $("#prijavljen").empty().append(/*"Prijavljen korisnik: " +*/ data.userName);
+
+            document.getElementById("divTableScaling").classList.add("col-sm-8");
+            document.getElementById("divTableScaling").classList.remove("col-sm-10");
+
             document.getElementById("pretraga").classList.remove("hidden");
             //document.getElementById("dodavanje").classList.remove("hidden");
 
@@ -127,6 +131,8 @@
         document.getElementById("dodavanje").classList.add("hidden");
         document.getElementById("divPrijava").classList.add("hidden");
         document.getElementById("info1").classList.remove("hidden");
+        document.getElementById("divTableScaling").classList.add("col-sm-10");
+        document.getElementById("divTableScaling").classList.remove("col-sm-8");
 
         let elements = document.getElementsByClassName("showHide");
         for (var i = 0; i < elements.length; i++) {
