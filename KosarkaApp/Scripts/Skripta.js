@@ -72,6 +72,7 @@
     // PRIJAVA KORISNIKA *******************************************************
     $("#formPrijava").submit(function (e) {
         e.preventDefault();
+        document.getElementById("prijavljen2").innerHTML = "";
 
         var email = $("#priEmail").val();
         var loz = $("#priLoz").val();
@@ -90,7 +91,6 @@
 
         }).done(function (data) {
             token = data.access_token;
-            tokenType = data.token_type;
             document.getElementById("priEmail").value = "";
             document.getElementById("priLoz").value = "";
             document.getElementById("divPrijava").classList.add("hidden");
@@ -278,15 +278,15 @@
 
     // KLIK btnRegistracija *******************************************************
     function divRegistracija() {
+        document.getElementById("prijavljen2").innerHTML = "";
         var email = $("#priEmail").val();   // test@gmail.com
-        var loz1 = $("#priLoz").val();      // Test@123
-        var loz2 = $("#priLoz").val();     // Test@123
+        var loz = $("#priLoz").val();      // Test@123
 
         // objekat koji se salje
         var sendData = {
             "Email": email,
-            "Password": loz1,
-            "ConfirmPassword": loz2
+            "Password": loz,
+            "ConfirmPassword": loz
         };
 
         $.ajax({
@@ -297,7 +297,8 @@
         }).done(function (data) {
             document.getElementById("priEmail").value = "";
             document.getElementById("priLoz").value = "";
-            $("#prijavljen").append("Uspešna registracija na sistem.");
+            //$("#prijavljen2").append("Uspešna registracija na sistem.");
+            document.getElementById("prijavljen2").innerHTML = "Uspesna registracija na sistem!";
 
         }).fail(function (data) {
             alert("Greška prilikom registracije!");
