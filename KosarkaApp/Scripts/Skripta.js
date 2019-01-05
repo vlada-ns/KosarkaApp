@@ -125,7 +125,8 @@
         document.getElementById("info").classList.add("hidden");
         document.getElementById("pretraga").classList.add("hidden");
         document.getElementById("dodavanje").classList.add("hidden");
-        document.getElementById("divPrijava").classList.remove("hidden");
+        document.getElementById("divPrijava").classList.add("hidden");
+        document.getElementById("info1").classList.remove("hidden");
 
         let elements = document.getElementsByClassName("showHide");
         for (var i = 0; i < elements.length; i++) {
